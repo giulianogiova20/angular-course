@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Status</th>
+            <th scope="col">Activate/Deactivate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students" [ngClass]="student.status ? 'table-success' : 'table-danger'" [style.font-weight]="student.age > 35 ? 'bold' : 'normal'">
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.status}}</td>
+            <td><button (click)="student.toggleStatus()">Toggle</button></td>
+        </tr>
+    </tbody>
+</table>
